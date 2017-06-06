@@ -39,7 +39,7 @@ public class TodoControllerTest {
 	@Test
 	public void shouldCreate() throws Exception {
 
-		String requestBody = "{\"id\":\"\", \"todo\":\"테스트메서드만들기\", \"completed\":\"0\", \"date\":\"2017-06-05T04:30:25.773\"}";
+		String requestBody = "{\"id\":\"\", \"todo\":\"테스트메서드만들기\", \"completed\":\"0\"}";
 
 		mvc.perform(post("/insert").contentType(MediaType.APPLICATION_JSON).content(requestBody))
 				.andExpect(status().isCreated()).andExpect(jsonPath("$.id").exists())
